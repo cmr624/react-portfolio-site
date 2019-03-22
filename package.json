@@ -6,8 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "dev": "concurrently \"npm start\" \"cd react-ui && npm start\""
+    "dev": "concurrently \"npm start\" \"cd react-ui && npm start\"",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cmr624/react-portfolio-site.git"
