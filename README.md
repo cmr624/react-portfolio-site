@@ -1,4 +1,4 @@
-# Node React Portfolio Website
+# Node React Portfolio Website [![Build Status](https://travis-ci.com/cmr624/react-portfolio-site.svg?branch=master)](https://travis-ci.com/cmr624/react-portfolio-site)
 
 ## Basic Functionality
 

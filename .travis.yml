@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "node"
+install:
+  - npm run installAll
+script:
+  - npm run test
+notifications:
+  slack: cm-web-dev:TUO4TnetuxK0tfQwMoF635KZ
