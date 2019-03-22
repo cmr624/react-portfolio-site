@@ -1,0 +1,28 @@
+{
+  "name": "react-portfolio-site",
+  "version": "1.0.0",
+  "description": "CM MERN Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "concurrently \"npm start\" \"cd react-ui && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmr624/react-portfolio-site.git"
+  },
+  "author": "Carlos-Michael Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmr624/react-portfolio-site/issues"
+  },
+  "homepage": "https://github.com/cmr624/react-portfolio-site#readme",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "os": "^0.1.1",
+    "path": "^0.12.7"
+  }
+}
