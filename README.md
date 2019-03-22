@@ -3,8 +3,9 @@
 ## Basic Functionality
 
 - [ ] Home Page
-  - [ ] Display my name, basic LinkedIn-style bio
-  - [ ] Some way to download resume
+  - [ ] Display my name with a basic LinkedIn-style bio
+  - [ ] Some way to download resume but choose between the types (web dev / game / IT)
+  - [ ] Some sort of scrollable / autoscrolling list of my skills, perhaps icons of all the companies / apis
 - [ ] Web Development Projects Page
   - [ ] Landing Page
   - [ ] Individual Project Page
