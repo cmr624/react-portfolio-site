@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
-
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 5000;
-
+const mongoose = require("mongoose");
+const url = "mongodb://cmtest:test1two@ds113795.mlab.com:13795/heroku_p6brdnr5"
+var db;
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
@@ -27,8 +28,13 @@ if (!isDev && cluster.isMaster) {
 
   // Answer API requests.
   app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server!"}');
+    db.collection("test").find({}).toArray(function(err, docs) {
+        if (err) {
+          handleError(res, err.message, "Failed to get test database.");
+        } else {
+            res.status(200).json(docs[0]);
+        }
+      });
   });
 
   // All remaining requests return the React app, so it can handle routing.
@@ -36,7 +42,20 @@ if (!isDev && cluster.isMaster) {
     response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
   });
 
-  app.listen(PORT, function () {
-    console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
+  mongoose.connect(url, function (err, database) {
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+  
+    // Save database object from the callback for reuse.
+    db = database;
+    console.log("Database connection ready");
+  
+    // Initialize the app.
+    app.listen(PORT, function () {
+        console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
+      });
   });
+  
 }

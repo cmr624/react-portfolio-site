@@ -21,7 +21,7 @@ class App extends Component {
       })
       .then(json => {
         this.setState({
-          message: json.message,
+          message: json.name,
           fetching: false
         });
       }).catch(e => {
