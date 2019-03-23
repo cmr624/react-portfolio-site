@@ -9,7 +9,7 @@ import Games from '../pages/Games'
 // and /schedule routes will match any pathname that starts
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
-class Main extends Component {
+class MainRouter extends Component {
     render() {
         return (
             <main>
@@ -23,4 +23,4 @@ class Main extends Component {
     }
 };
 
-export default Main;
+export default MainRouter;
