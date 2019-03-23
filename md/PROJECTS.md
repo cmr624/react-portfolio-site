@@ -52,5 +52,14 @@ Since we're moving to MongoDB, we're having express serve up this JSON instead o
 Quick definition - "project" is the word we'll use for something that has both these properties:
 
 1. its own rendered web page
-2. some sort of preview generated from the content in the rendered web page.
+2. some sort of preview generated from the content in the actual routed web page
 
+So if we're talking about routes, we'll have first
+
+`/webdev`
+
+which is an index page with all my webdev projects, has some text about them, then a list of all my projects, like this website, which would be the route
+
+`/webdev/reactportfoliosite`
+
+which would be that full rendered web page. but in `webdev` it still looks in the db for "preview" content and renders it in the components. Here we can also do fun things like grouping by tags, or sorting alphabetically, or whatever.
