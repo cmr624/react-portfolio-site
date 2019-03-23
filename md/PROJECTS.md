@@ -1,8 +1,21 @@
 # Projects
 
+## Current Project Schema
+
+```javascript
+"name": "carlos-michael.com", //name of the project
+    "blurb": "A portfolio website built with a full MERN stack.", // preview on card
+    "skills": [
+        "DiMongodb",
+        "DiJavascript1",
+        "DiNodejs"
+    ] // a list of items from "react-icons"
+    "linkRel": "/portfolio" //relative link + the index page
+```
+
 ## Structure Debrief
 
-Currently, I have the following in nodepersonalsite:
+Node Personal Site used the following:
 
 ### Project-Specific Pages
 
