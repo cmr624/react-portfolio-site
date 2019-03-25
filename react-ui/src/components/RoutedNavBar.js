@@ -8,9 +8,9 @@ class RoutedNavBar extends Component {
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand to="/">CM</Navbar.Brand>
             <Nav className="mr-auto">
-                <Nav.Link><NavLink to="/">Home</NavLink></Nav.Link>
-                <Nav.Link><NavLink to="/webdev">Web Development</NavLink></Nav.Link>
-                <Nav.Link><NavLink to="/games">Games</NavLink></Nav.Link>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/webdev">Web Development</NavLink>
+                <NavLink to="/games">Games</NavLink>
             </Nav>    
         </Navbar>
     );

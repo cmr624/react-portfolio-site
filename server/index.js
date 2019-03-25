@@ -26,16 +26,27 @@ if (!isDev && cluster.isMaster) {
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
-  // Answer API requests.
-  app.get('/api', function (req, res) {
-    db.collection("test").find({}).toArray(function(err, docs) {
+  // Answer webdev API request.
+  app.get('/api/webdev', function (req, res) {
+    db.collection("webdev").find({}).toArray(function(err, docs) {
         if (err) {
-          handleError(res, err.message, "Failed to get test database.");
+          handleError(res, err.message, "Failed to get webdev database.");
         } else {
-            res.status(200).json(docs[0]);
+            res.status(200).json(docs);
         }
       });
   });
+
+  app.get('/api/games', function (req, res) {
+    db.collection("games").find({}).toArray(function(err, docs) {
+        if (err) {
+          handleError(res, err.message, "Failed to get games database.");
+        } else {
+            res.status(200).json(docs);
+        }
+      });
+  });
+
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {

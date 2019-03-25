@@ -3,20 +3,56 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Webdev from '../pages/Webdev'
 import Games from '../pages/Games'
+import IndividualProject from "../pages/IndividualProject";
 
-// The Main component renders one of the three provided
-// Routes (provided that one matches). Both the /roster
-// and /schedule routes will match any pathname that starts
-// with /roster or /schedule. The / route will only match
-// when the pathname is exactly the string "/"
+//we need a function that creates additional routes from db
+
 class MainRouter extends Component {
+
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      webdevroutes: [],
+      gameroutes:[],
+      message:''
+    }
+    this.toRoute = this.toRoute.bind(this);
+  }
+  componentDidMount() {
+    fetch('/api/webdev')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(json => {      
+        //right now, this gets every webdev item in the db 
+        //and returns the full item
+        this.setState({webdevroutes: json,
+          });
+      }).catch(e => {
+        this.setState({
+          message: `API call failed: ${e}`,
+        });
+      })
+  }
+  toRoute = (element, i) => {
+    
+    return (
+      <Route path={element.linkRel} component={IndividualProject}/>
+    )
+  }
+
     render() {
         return (
             <main>
             <Switch>
               <Route exact path='/' component={Home}/>
-              <Route path='/webdev' component={Webdev}/>
-              <Route path='/games' component={Games}/>
+              <Route exact path='/webdev' component={Webdev}/>
+              <Route exact path='/games' component={Games}/>
+              {this.state.webdevroutes.map(this.toRoute)}
             </Switch>
           </main>
         );

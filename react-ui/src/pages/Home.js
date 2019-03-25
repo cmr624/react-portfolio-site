@@ -9,7 +9,6 @@ class Home extends Component {
         <h2>Full Stack Web Developer</h2>
         <h3>NYU May 2019</h3>
       </div>
-
     );
   }
 }
