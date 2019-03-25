@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink, Route, Switch} from "react-router-dom";
 import IndividualProject from "../pages/IndividualProject";
+
 class PreviewCard extends Component {
 
     
@@ -10,6 +11,7 @@ class PreviewCard extends Component {
                 <h1>{this.props.name}</h1>
                 <h2>{this.props.blurb}</h2>
                 <NavLink to={this.props.linkRel}>More Details</NavLink>
+                <img src={"/images/" + this.props.imgLink }/>
             </div>
         );
     }

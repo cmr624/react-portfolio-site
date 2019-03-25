@@ -45,6 +45,7 @@ class Webdev extends Component {
           blurb = {element.blurb}
           skills={element.skills}
           linkRel={element.linkRel}
+          imgLink={element.imgLink}
         />
         )
       }
