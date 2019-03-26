@@ -6,8 +6,8 @@ import './RoutedNavBar.css';
 class RoutedNavBar extends Component {
   render() {
     return (
-        <Navbar collapseOnSelect expand="sm" className = "navContainer">
-            <Navbar.Brand className="navBrand" to="/">CM</Navbar.Brand>
+      <Navbar collapseOnSelect expand="sm" className = "navContainer">
+      <Navbar.Brand className="navBrand" to="/">CM</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" id="toggle"/>
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
