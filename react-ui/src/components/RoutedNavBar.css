@@ -1,0 +1,20 @@
+.navContainer
+{
+    background-color: #000000;
+}
+
+.navBrand
+{
+    color: #FFFFFF !important; 
+}
+
+.navContainer a{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #FFFFFF !important;
+}
+#toggle
+{
+
+    background-color: rgb(36, 36, 36) !important;
+}

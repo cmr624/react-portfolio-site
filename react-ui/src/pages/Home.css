@@ -1,0 +1,71 @@
+.Home {
+    font-family: Futura;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 42px;
+    text-align: left !important;
+}
+
+.right-side
+{
+    padding-top: 20px;
+    text-align: right;
+    font-size: 24px;
+}
+.buttons 
+{
+    border-width: 0px;
+    color: #1d1a1a;
+}
+.btnLink
+{
+}
+.header-and-pic
+{
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.columnRight
+{
+    text-align: right;
+}
+.bottom-blurb
+{
+    max-width: 700px;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 30px;
+}
+.icons-footer
+{
+    text-align: center !important;
+    max-width: 500px;
+}
+.icons-footer a
+{
+    background-color: transparent;
+    color: white;
+    float: center;
+}
+.icons-footer a:link {
+    background-color: transparent;
+  }
+  
+  /* visited link */
+  .icons-footer a:visited {
+    background-color: transparent;
+  }
+  
+  /* mouse over link */
+  .icons-footer a:hover {
+    background-color: transparent;
+    color: rgb(94, 94, 94);
+  }
+  
+  /* selected link */
+  .icons-footer a:active {
+    background-color: transparent;
+  }
