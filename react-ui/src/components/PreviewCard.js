@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import {NavLink, Route, Switch} from "react-router-dom";
-import IndividualProject from "../pages/IndividualProject";
-
+import {Card, Button, Container} from "react-bootstrap";
+import {DiMongodb, DiJavascript1, DiNodejs} from "react-icons/di";
 class PreviewCard extends Component {
 
+    constructor(props)
+    {
+        super(props);
+        this.toIcon = this.toIcon.bind(this);
+    }
+    toIcon = (element, i) =>
+    {
+        return(
+            <DiMongodb></DiMongodb>
+        )
+        
+    }
     
     render() {
         return (
-            <div>
-                <h1>{this.props.name}</h1>
-                <h2>{this.props.blurb}</h2>
-                <NavLink to={this.props.linkRel}>More Details</NavLink>
-                <img src={"/images/" + this.props.imgLink }/>
-            </div>
+            <Card className style={{ maxWidth: '18em'}}>
+                <Container style={{display: "block", height:"15em"}}>
+                    <Card.Img variant="top" style={{width: "100%", float: "center", paddingTop: "30px"}} src={"/images/previews/" + this.props.imgLink }/>
+                </Container>
+                <Card.Body>
+                    <Card.Title>{this.props.name}</Card.Title>
+                    <Card.Text>
+                    {this.props.blurb}                    
+                    </Card.Text>
+                    <Button variant="primary" href={this.props.linkRel}>More Details</Button>
+                </Card.Body>
+            </Card>
         );
     }
 }
@@ -20,7 +37,5 @@ class PreviewCard extends Component {
 export default PreviewCard;
 
 /*
-<Switch>
-    <Route path={this.props.linkRel} component={IndividualProject}/> 
-</Switch>
+{this.props.skills.map(this.toIcon)}
 */

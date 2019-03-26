@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from '.././logo.svg';
+import {CardDeck, Container} from "react-bootstrap";
 import PreviewCard from "../components/PreviewCard";
 import { PulseLoader}  from "react-spinners";
-import {Switch} from "react-router-dom";
-import MainRouter from "../components/MainRouter";
+import "./Webdev.css";
 
 class Webdev extends Component {
 
@@ -51,17 +50,26 @@ class Webdev extends Component {
       }
     render() {
         return (
-            <div className="container">
-                <h1>WEBDEV</h1>
-                <h2>Lorem Lorem ipsum Lorem ipsum Lorem ipsum ipsumLorem ipsum Lorem ipsum ipsumLorem ipsum Lorem ipsum ipsumLorem ipsum Lorem ipsum ipsum </h2>
-                  <div>
-                    <h2>Project Previews</h2>
-                    {this.state.cards.map(this.toPreview)}
-                    <PulseLoader
-                      color={'#8EC8E7'}
-                      loading = {this.state.loading}
-                    />
-                  </div>
+            <div className="container webdev">
+                <Container style={{textAlign: "center", padding: "30px 30px 30px 30px"}}>
+                  <h1>Web Development</h1>
+                  <p>While NYU's Computer Science program has exposed me to C, Java, Python and more, my experience in a variety of APIs through developing web apps and other projects makes me well-equipped as a developer to jump from framework to framework and deliver a quality product.</p>
+                  <h2>Project Previews</h2>
+                </Container>
+                    <Container style={{color: "black"}}>
+                      <CardDeck>
+                      {this.state.cards.map(this.toPreview)}
+                      </CardDeck>
+                      <Container style={{textAlign: "center"}}>
+                        <PulseLoader
+                        color={'#8EC8E7'}
+                        loading = {this.state.loading}
+                        size={30}
+                      />
+                      </Container>
+                      
+                    </Container>
+                    
             </div>
         );
   }

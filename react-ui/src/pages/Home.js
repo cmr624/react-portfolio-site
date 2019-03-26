@@ -42,7 +42,7 @@ class Home extends Component {
         </div>    
         <div className="container bottom-blurb">
           <p>Looking for positions in software engineering, backend and frontend web development, and game development. <br></br>Looking for positions beginning after graduation June 2019.</p>
-          <p>This website is powered with the MERN stack - MongoDB, Express, React, and Node.js. Please check out the github repository <a href="https://github.com/cmr624/react-portfolio-site.git">here!</a></p>
+          <br></br><p>This website is powered with the MERN stack - MongoDB, Express, React, and Node.js. Please check out the github repository <a href="https://github.com/cmr624/react-portfolio-site.git">here!</a></p>
         </div>
         <Container>
           <Navbar collapseOnSelect expand="sm" 
