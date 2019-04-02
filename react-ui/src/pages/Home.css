@@ -3,17 +3,26 @@
     color: #ffffff;
 }
 
-h1 {
-    font-size: 42px;
-    text-align: left !important;
+.Home h1 {
+    font-size: 48px;
+    text-align: right !important;
+    display: block;
+    float: right;
+    margin-left: -40px;
+    padding-bottom: 40px;
+    margin-top: -7px;
+    
 }
 
 .right-side
 {
-    padding-top: 20px;
     text-align: right;
-    font-size: 24px;
 }
+
+.right-side h2{
+    font-size: 158%;
+}
+
 .buttons 
 {
     border-width: 0px;
@@ -28,6 +37,11 @@ h1 {
     padding-bottom: 30px;
 }
 
+.justHeader{
+    padding-right: 6%;
+    padding-bottom: 6%;
+}
+
 .columnRight
 {
     text-align: right;
@@ -39,33 +53,3 @@ h1 {
     text-align: center;
     padding-top: 30px;
 }
-.icons-footer
-{
-    text-align: center !important;
-    max-width: 500px;
-}
-.icons-footer a
-{
-    background-color: transparent;
-    color: white;
-    float: center;
-}
-.icons-footer a:link {
-    background-color: transparent;
-  }
-  
-  /* visited link */
-  .icons-footer a:visited {
-    background-color: transparent;
-  }
-  
-  /* mouse over link */
-  .icons-footer a:hover {
-    background-color: transparent;
-    color: rgb(94, 94, 94);
-  }
-  
-  /* selected link */
-  .icons-footer a:active {
-    background-color: transparent;
-  }

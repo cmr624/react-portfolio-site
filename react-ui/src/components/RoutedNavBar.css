@@ -1,3 +1,7 @@
+.navbar-light .navbar-toggler-icon
+{
+    background-image:url("/images/navbar/navbaricon.png") !important;
+}
 .navContainer
 {
     background-color: #000000;
@@ -15,6 +19,5 @@
 }
 #toggle
 {
-
-    background-color: rgb(36, 36, 36) !important;
+    background-color: black !important;
 }

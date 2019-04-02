@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Card, Button, Container} from "react-bootstrap";
-import {DiMongodb, DiJavascript1, DiNodejs} from "react-icons/di";
 class PreviewCard extends Component {
 
     constructor(props)
@@ -11,16 +10,17 @@ class PreviewCard extends Component {
     toIcon = (element, i) =>
     {
         return(
-            <DiMongodb></DiMongodb>
+            <h1>hey</h1>
         )
         
     }
     
     render() {
         return (
-            <Card className style={{ maxWidth: '18em'}}>
-                <Container style={{display: "block", height:"15em"}}>
-                    <Card.Img variant="top" style={{width: "100%", float: "center", paddingTop: "30px"}} src={"/images/previews/" + this.props.imgLink }/>
+            <div style={{padding: "20px", textAlign:"center", margin: "auto"}}>
+            <Card className="mx-auto" style={{ maxWidth: '18em', minWidth: '14em', margin: "auto"}}>
+                <Container style={{display: "block", height:"15em", padding: "10px"}}>
+                    <Card.Img variant="top" style={{width: "100%", display: "block"}} src={"/images/previews/" + this.props.imgLink }/>
                 </Container>
                 <Card.Body>
                     <Card.Title>{this.props.name}</Card.Title>
@@ -30,6 +30,7 @@ class PreviewCard extends Component {
                     <Button variant="primary" href={this.props.linkRel}>More Details</Button>
                 </Card.Body>
             </Card>
+            </div>
         );
     }
 }

@@ -41,7 +41,11 @@ class MainRouter extends Component {
   toRoute = (element, i) => {
     
     return (
-      <Route path={element.linkRel} component={IndividualProject}/>
+      <Route path={element.linkRel} 
+      render={(props) => <IndividualProject {...props} 
+        name = {element.name}
+        sections = {element.sections}
+        links={element.links} />}/>
     )
   }
 
