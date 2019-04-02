@@ -56,19 +56,18 @@ class Webdev extends Component {
                   <p>While NYU's Computer Science program has exposed me to C, Java, Python and more, my experience in a variety of APIs through developing web apps and other projects makes me well-equipped as a developer to jump from framework to framework and deliver a quality product.</p>
                   <h2>Project Previews</h2>
                 </Container>
-                    <Container style={{color: "black"}}>
-                      <CardDeck>
+                  <Container style={{color: "black", marginLeft: "auto", marginRight: "auto" }}>
+                    <CardDeck>
                       {this.state.cards.map(this.toPreview)}
-                      </CardDeck>
-                      <Container style={{textAlign: "center"}}>
-                        <PulseLoader
-                        color={'#8EC8E7'}
-                        loading = {this.state.loading}
-                        size={30}
-                      />
-                      </Container>
-                      
-                    </Container>
+                    </CardDeck>
+                    <Container style={{textAlign: "center"}}>
+                      <PulseLoader
+                      color={'#8EC8E7'}
+                      loading = {this.state.loading}
+                      size={30}
+                    />
+                  </Container>
+                </Container>
                     
             </div>
         );
@@ -76,52 +75,3 @@ class Webdev extends Component {
 }
 
 export default Webdev;
-
-/*
-class App extends Component {
-  
-
-  {this.state.loading && 
-                <PulseLoader
-                    loading = {this.state.loading}
-                />}
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          { process.env.NODE_ENV === 'production' ?
-              <p>
-                This is a production build from create-react-app.
-              </p>
-            : <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-          }
-          <p>{'« '}<strong>
-            {this.state.fetching
-              ? 'Fetching message from API'
-              : this.state.message}
-          </strong>{' »'}</p>
-          <p><a
-            className="App-link"
-            href="https://github.com/mars/heroku-cra-node"
-          >
-            React + Node deployment on Heroku
-          </a></p>
-          <p><a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a></p>
-        </header>
-      </div>
-    );
-  }
-}
-
-*/
