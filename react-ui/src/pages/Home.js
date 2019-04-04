@@ -28,7 +28,7 @@ class Home extends Component {
 
   
         <div className="container bottom-blurb">
-          <p>Looking for positions in game design, back-end and frontend web development, and game development. <br></br><br></br>Available for positions <b>after graduation June 2019.</b></p>
+          <p>Looking for positions in game design, backend and frontend web development, and game development. <br></br><br></br>Available for positions <b>after graduation June 2019.</b></p>
       </div>
       </div>
     );
