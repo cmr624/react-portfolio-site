@@ -44,12 +44,12 @@ class GameBoy extends Component {
                         <li id="down">▼</li>
                         <li id="left">◀</li>
                     </ul>
-                    <a href="#">
+                    
                         <ul id="ABbtns">
                             <li>A</li>
                             <li>B</li>
                         </ul>
-                    </a>
+                   
                     <div id="SSbtns">
                         <ul>
                            <a id="moreInfo" href={this.props.detailsLink}></a>

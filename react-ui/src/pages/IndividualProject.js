@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import "./IndividualProject.css";
 class IndividualProject extends Component {
   
@@ -10,6 +10,21 @@ class IndividualProject extends Component {
   }
 
   toSection = (element, i) => {
+    if (i === 1)
+    {
+      return[
+        this.props.images && <Col md={6} style={{padding: "20px"}}>
+          <Image src={"/images"+ this.props.images[0]} rounded fluid/>
+        </Col>
+        ,<Col md={6} style={{padding: "20px"}}>
+        <h3>{element.title}</h3>
+        <p>{element.description}</p>
+        <ul>
+          {element.list && element.list.map((e) => {return(<li>{e}</li>)})}
+        </ul>
+      </Col>
+      ]
+    }
     return (
       <Col md={6} style={{padding: "20px"}}>
         <h3>{element.title}</h3>
@@ -25,14 +40,16 @@ class IndividualProject extends Component {
     return (
       <Container className="main">
             <Container>
-            <h1 style={{textAlign: "center", padding: "20px", fontSize:"54px"}}>{this.props.name}</h1>
-
+              <h1 style={{textAlign: "center", padding: "20px 20px 10px 20px", fontSize:"54px"}}>{this.props.name}</h1>
+              <h2 style={{textAlign: "center", padding: "0px 0px 20px 0px", fontSize:"24px"}}>{this.props.credits}</h2>
             </Container>
        <Row>
           {this.props.sections.map(this.toSection)}
           <Col md={6}>
           <h3>Links</h3>
-          {this.props.links.map((e)=>{return(<a href={e.link}>{e.description}</a>)})}
+          <ul>
+          {this.props.links.map((e)=>{return(<li><a href={e.link}>{e.description}</a></li>)})}
+          </ul>
         </Col>
        </Row>
 
@@ -43,40 +60,4 @@ class IndividualProject extends Component {
 export default IndividualProject;
 
 /*
-    {
-        "name": "Clarify",
-        "coverURL": "/images/projects/clarifyMockUp.gif",
-        "sections":[
-          {
-            "title": "Project Description",
-            "description":"Created for HackNYU 2018, this presentation application allows for users to create a presentation or join an existing one, and view live what the presenter is presenting. You are able to send anonymous questions to the professor and they can answer them live. Clarify won in the Education Technology track, with judges noting its commercial viablity and simple and effective idea that could be rapidly adopted in higher education.",
-            "list": null
-          },
-          {
-            "title": "Technologies Used",
-            "description":null,
-            "list": ["Node JS", "Socket.io", "MongoDB", "HTML5 + CSS3", "Passport", "Handlebars Templating", "Github"]
-          },
-          {
-            "title": "More Information",
-            "description":"Our app was for the Education Technology track at HackNYU 2018. We had a team of five of us that all had specific tasks. I was in charge of creating and delegating tasks, writing out the task requirements, and working on all aspects to make sure the vision was consistent. We broke up the design based on its core tenets of functionality: the design, user authentication and saving user data in a database (MongoDB), socket.io for real-time 'chatroom' like features, node.js to run the app, and HTML and CSS to implement the design.",
-            "list": null
-          }
-        ],
-        "links":[
-          {
-            "type":"fa fa-newspaper-o",
-            "description":"Article Link",
-            "link":"https://nyulocal.com/hundreds-participate-in-annual-nyu-hackathon-ac269bc4db92"
-          }
-        ],
-        "images":[
-          {
-            "path":"/images/projects/clarifyLogo.png",
-            "topCaption":"Clarify",
-            "bottomCaption":"Won top prize at HackNYU 2018",
-            "active":"active"
-          }
-        ]
-    },
 */

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Row} from "react-bootstrap";
-import {FaGithubSquare, FaLinkedin, FaTwitterSquare, FaInstagram, FaRegEnvelope}from "react-icons/fa";
+import {FaGithubSquare, FaLinkedin, FaTwitterSquare, FaRegEnvelope}from "react-icons/fa";
+import {MdGamepad} from "react-icons/md";
 import "./Footer.css";
 class Footer extends Component {
     render()
@@ -24,8 +25,8 @@ class Footer extends Component {
               size={this.props.size}
               />
             </a>
-            <a href="https://www.instagram.com/carlosmichael22">
-              <FaInstagram
+            <a href="https://cmr624.itch.io/">
+              <MdGamepad
               size={this.props.size}
               />
             </a>

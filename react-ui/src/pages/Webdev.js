@@ -51,9 +51,11 @@ class Webdev extends Component {
     render() {
         return (
             <div className="container webdev">
-                <Container style={{textAlign: "center", padding: "30px 30px 30px 30px"}}>
+                <Container style={{textAlign: "center", padding: "30px 30px 10px 30px"}}>
                   <h1 style={{fontSize: "48px"}}>Web Development</h1>
-                  <Container style={{maxWidth: "580px", fontSize:"20px"}}><p>While NYU's Computer Science program has exposed me to C, Java, Python and more, my experience in a variety of APIs through developing web apps and other projects makes me well-equipped as a developer to jump from framework to framework and deliver a quality product.</p></Container>
+                  <h2>By Carlos-Michael</h2>
+                  <Container style={{maxWidth: "580px", fontSize:"20px"}}><p>While NYU's Computer Science program has exposed me to C, Java, Python and more, my experience in a variety of web development courses, along with my web programming minor, makes me well-equipped as a full stack developer to jump from framework to framework, backend to frontend, and deliver a quality product.</p></Container>
+                  
                   <h2>Project Previews</h2>
                 </Container>
                   <Container style={{color: "black", marginLeft: "auto", marginRight: "auto" }}>
