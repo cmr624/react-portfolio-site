@@ -24,7 +24,10 @@ class IndividualProject extends Component {
   render() {
     return (
       <Container className="main">
-              <h1 style={{textAlign: "center", padding: "20px", fontSize:"54px"}}>{this.props.name}</h1>
+            <Container>
+            <h1 style={{textAlign: "center", padding: "20px", fontSize:"54px"}}>{this.props.name}</h1>
+
+            </Container>
        <Row>
           {this.props.sections.map(this.toSection)}
           <Col md={6}>
