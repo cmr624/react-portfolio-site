@@ -45,7 +45,9 @@ class MainRouter extends Component {
       render={(props) => <IndividualProject {...props} 
         name = {element.name}
         sections = {element.sections}
-        links={element.links} />}/>
+        links={element.links}
+        images={element.images} 
+        credits={element.credits}/>}/>
     )
   }
 

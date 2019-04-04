@@ -12,10 +12,12 @@ class Home extends Component {
                 <h1>Carlos Michael Rodriguez</h1>
                 <div className="right-side">
                   <h2>Game Designer.</h2>
-                  <h2>Game Developer.</h2>
                   <h2>Full Stack Web Developer.</h2>
                   <h2>Software Engineer.</h2>
-                  <h2>NYU CS Grad.</h2>
+                  <br></br>
+                  <br></br>
+                  <h2>B.A. NYU Computer Science</h2>
+                  <h2>Minor in <a href="/webdev">Web Programming</a>, <a href="/games">Game Design</a></h2>
                 </div>
             </Col>
             <Col xs={12} md={5}>
