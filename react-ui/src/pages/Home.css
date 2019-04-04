@@ -7,15 +7,13 @@
     font-size: 48px;
     text-align: right !important;
     display: block;
-    float: right;
-    margin-left: -40px;
-    padding-bottom: 40px;
-    margin-top: -7px;
+    padding-bottom: 20px;
 }
 
 .right-side
 {
     text-align: right;
+    display: block;
 }
 
 .right-side h2{
