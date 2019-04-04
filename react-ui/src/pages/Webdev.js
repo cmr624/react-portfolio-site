@@ -52,8 +52,8 @@ class Webdev extends Component {
         return (
             <div className="container webdev">
                 <Container style={{textAlign: "center", padding: "30px 30px 30px 30px"}}>
-                  <h1>Web Development</h1>
-                  <p>While NYU's Computer Science program has exposed me to C, Java, Python and more, my experience in a variety of APIs through developing web apps and other projects makes me well-equipped as a developer to jump from framework to framework and deliver a quality product.</p>
+                  <h1 style={{fontSize: "48px"}}>Web Development</h1>
+                  <Container style={{maxWidth: "580px", fontSize:"20px"}}><p>While NYU's Computer Science program has exposed me to C, Java, Python and more, my experience in a variety of APIs through developing web apps and other projects makes me well-equipped as a developer to jump from framework to framework and deliver a quality product.</p></Container>
                   <h2>Project Previews</h2>
                 </Container>
                   <Container style={{color: "black", marginLeft: "auto", marginRight: "auto" }}>
