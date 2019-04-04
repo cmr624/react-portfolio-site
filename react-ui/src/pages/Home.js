@@ -6,7 +6,8 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-      <div className="container">
+      <Container>
+
           <Row className="header-and-pic">
             <Col xs={12} md={7} className = "justHeader">
                 <h1>Carlos Michael Rodriguez</h1>
@@ -26,9 +27,7 @@ class Home extends Component {
                 </div>
             </Col>
           </Row>
-          </div>
-
-  
+          </Container>
         <div className="container bottom-blurb">
           <p>Looking for positions in game design, backend and frontend web development, and game development. <br></br><br></br>Available for positions <b>after graduation June 2019.</b></p>
       </div>
