@@ -10,7 +10,7 @@
         "DiJavascript1",
         "DiNodejs"
     ] // a list of items from "react-icons"
-    "linkRel": "/portfolio" //relative link + the index page
+    "detailsLink": "/portfolio" //relative link + the index page
 ```
 
 ## Structure Debrief

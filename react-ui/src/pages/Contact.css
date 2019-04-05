@@ -1,0 +1,49 @@
+.Contact
+{
+    color: white;
+}
+.Contact h1{
+    padding: 20px 10px 10px 20px;
+    font-size: 48px;
+    text-align: center;
+}
+.Contact h2{
+    padding: 20px 10px 10px 20px;
+    font-size: 24px;
+    text-align: center;
+}
+.icons
+{
+    text-align: center !important;
+    margin: auto;
+    padding-top: 40px;
+}
+.icons a
+{
+    background-color: transparent;
+    color: white;
+    float: center;
+    padding: 10px 10px 10px 10px;
+}
+.footer{
+    padding-bottom: 40px;
+}
+.icons a:link {
+    background-color: transparent;
+  }
+  
+  /* visited link */
+  .icons a:visited {
+    background-color: transparent;
+  }
+  
+  /* mouse over link */
+  .icons a:hover {
+    background-color: transparent;
+    color: rgb(94, 94, 94);
+  }
+  
+  /* selected link */
+  .icons a:active {
+    background-color: transparent;
+  }

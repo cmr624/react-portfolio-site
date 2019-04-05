@@ -27,7 +27,7 @@ class PreviewCard extends Component {
                     <Card.Text>
                     {this.props.blurb}                    
                     </Card.Text>
-                    <Button variant="primary" href={this.props.linkRel}>More Details</Button>
+                    <Button variant="primary" href={this.props.detailsLink}>More Details</Button>
                 </Card.Body>
             </Card>
             </div>
