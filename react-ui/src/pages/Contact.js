@@ -60,7 +60,7 @@ class Contact extends Component {
           </Row>
           <div style={{padding: "20px", maxHeight:"400px", maxWidth:"400px", margin: "auto"}}>
           <Image style={{margin: "auto", display: "block", padding: "5px"}}
-          src="/images/me/meAPRIL.jpg" 
+          src="/images/me/meApril.jpg" 
           thumbnail
           fluid
           ></Image>
