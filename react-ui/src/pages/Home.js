@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
-import { Image, Row, Col, ButtonGroup, Button, Container, Navbar} from 'react-bootstrap';
+import { Image, Row, Col, Container} from 'react-bootstrap';
 class Home extends Component {
   
   render() {

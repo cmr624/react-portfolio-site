@@ -14,6 +14,7 @@ class RoutedNavBar extends Component {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/webdev">Web Development</NavLink>
                 <NavLink to="/games">Games</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
             </Nav>    
             </Navbar.Collapse>
         </Navbar>
