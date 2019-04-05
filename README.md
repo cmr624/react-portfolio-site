@@ -21,13 +21,13 @@ Currently, we're hosted on [Heroku](https://react-portfolio-site-cm.herokuapp.co
   - [ ] Some sort of scrollable / autoscrolling list of my skills, perhaps icons of all the companies / apis
 - [x] Web Development Projects Page
   - [x] Landing Page
-  - [ ] Individual Project Page
-- [ ] Game Page
-  - [ ] Landing Page
-  - [ ] Individual Game Page
+  - [x] Individual Project Page
+- [x] Game Page
+  - [x] Landing Page
+  - [x] Individual Game Page
   - [ ] Playable Build ?
-- [ ] Contact Page
-  - [ ] LinkedIn, Twitter, YouTube, etc.
+- [x] Contact Page
+  - [x] LinkedIn, Twitter, YouTube, etc.
 
 
 ## Advanced Functionality
