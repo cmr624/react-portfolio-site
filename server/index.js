@@ -4,11 +4,12 @@ const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const isDev = process.env.NODE_ENV !== 'production';
+const isStaging = process.env.NODE_ENV == "staging";
 const PORT = 5000;
 const mongoose = require("mongoose");
 let url;
 
-if (isDev)
+if (!isStaging)
 {
   url= "" + process.env.DB_HOST + process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_LINK;
 }
