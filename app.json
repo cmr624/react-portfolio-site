@@ -10,7 +10,8 @@
   "env": {
     "MONGODB_URI": {
       "required": true
-    }
+    },
+    "NODE_ENV":"staging"
   },
   "formation": {
     "web": {

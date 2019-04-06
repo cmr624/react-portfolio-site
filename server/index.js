@@ -6,7 +6,17 @@ const numCPUs = require('os').cpus().length;
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = 5000;
 const mongoose = require("mongoose");
-const url= "" + process.env.DB_HOST + process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_LINK;
+let url;
+
+if (isDev)
+{
+  url= "" + process.env.DB_HOST + process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_LINK;
+}
+else
+{
+  url = process.env.DB_URI;
+}
+console.log(url);
 
 var db;
 // Multi-process to utilize all CPU cores.
