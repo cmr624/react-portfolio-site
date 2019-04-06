@@ -1,11 +1,22 @@
 const express = require('express');
+require('dotenv').config()
 const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const isDev = process.env.NODE_ENV !== 'production';
-const PORT = process.env.PORT || 5000;
+const isStaging = process.env.NODE_ENV == "staging";
+const PORT = (process.env.PORT || 5000);
 const mongoose = require("mongoose");
-const url = "mongodb://cmtest:test1two@ds113795.mlab.com:13795/heroku_p6brdnr5"
+let url;
+
+if (!isStaging)
+{
+  url= "" + process.env.DB_HOST + process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_LINK;
+}
+else
+{
+  url = process.env.MONGODB_URI;
+}
 var db;
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
