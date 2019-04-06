@@ -5,7 +5,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const isDev = process.env.NODE_ENV !== 'production';
 const isStaging = process.env.NODE_ENV == "staging";
-const PORT = 5000;
+const PORT = (process.env.PORT || 5000);
 const mongoose = require("mongoose");
 let url;
 
@@ -17,8 +17,6 @@ else
 {
   url = process.env.MONGODB_URI;
 }
-console.log(url);
-
 var db;
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
