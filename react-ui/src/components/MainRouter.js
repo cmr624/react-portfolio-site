@@ -5,8 +5,8 @@ import Webdev from '../pages/Webdev';
 import Games from '../pages/Games';
 import Contact from '../pages/Contact';
 import IndividualProject from "../pages/IndividualProject";
-
-//we need a function that creates additional routes from db
+import Signup from './auth/Signup';
+import Login from "./auth/Login";
 
 class MainRouter extends Component {
 
@@ -20,6 +20,7 @@ class MainRouter extends Component {
     }
     this.toRoute = this.toRoute.bind(this);
   }
+
   componentDidMount() {
       fetch('/api/webdev').then(response => {
           if (!response.ok) {
@@ -70,6 +71,8 @@ class MainRouter extends Component {
         return (
             <main>
             <Switch>
+              <Route exact path="/signup" component={Signup}/>
+              <Route exact path="/login" render={() => <Login updateUser = {this.props.updateUser}/>}/>
               <Route exact path='/' component={Home}/>
               <Route exact path='/webdev' component={Webdev}/>
               <Route exact path='/games' component={Games}/>

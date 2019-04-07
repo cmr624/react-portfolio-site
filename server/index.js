@@ -1,23 +1,21 @@
 const express = require('express');
+const session = require("express-session");
+const bodyParser = require('body-parser');
 require('dotenv').config()
 const path = require('path');
 const cluster = require('cluster');
+const morgan = require('morgan');
 const numCPUs = require('os').cpus().length;
 const isDev = process.env.NODE_ENV !== 'production';
 const isStaging = process.env.NODE_ENV == "staging";
 const PORT = (process.env.PORT || 5000);
 const mongoose = require("mongoose");
-let url;
+const user = require('./routes/user');
+const passport = require('./passport');
+const dbConnection = require('./database');
+const MongoStore = require('connect-mongo')(session);
+const api = require('./routes/api');
 
-if (!isStaging)
-{
-  url= "" + process.env.DB_HOST + process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_LINK;
-}
-else
-{
-  url = process.env.MONGODB_URI;
-}
-var db;
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
@@ -34,50 +32,46 @@ if (!isDev && cluster.isMaster) {
 } else {
   const app = express();
 
+  // MIDDLEWARE
+  app.use(morgan('dev'))
+  app.use(
+    bodyParser.urlencoded({
+      extended: false
+    })
+  )
+  app.use(bodyParser.json())
+  const randomString="cmr123";
+    //sessions
+  app.use(
+    session({
+      secret: randomString, //pick a random string to make the hash that is generated secure
+      store: new MongoStore({ mongooseConnection: dbConnection}),
+      resave: false, //required
+      saveUninitialized: false //required
+    })
+  )
+
+  // Passport
+  app.use(passport.initialize())
+  app.use(passport.session()) // calls serializeUser and deserializeUser
+
+  //user route
+  app.use('/user', user);
+
+  //api route
+  app.use('/api', api);
+
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-
-  // Answer webdev API request.
-  app.get('/api/webdev', function (req, res) {
-    db.collection("webdev").find({}).toArray(function(err, docs) {
-        if (err) {
-          handleError(res, err.message, "Failed to get webdev database.");
-        } else {
-            res.status(200).json(docs);
-        }
-      });
-  });
-
-  app.get('/api/games', function (req, res) {
-    db.collection("games").find({}).toArray(function(err, docs) {
-        if (err) {
-          handleError(res, err.message, "Failed to get games database.");
-        } else {
-            res.status(200).json(docs);
-        }
-      });
-  });
-
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {
     response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
   });
 
-  mongoose.connect(url, function (err, database) {
-    if (err) {
-      console.log(err);
-      process.exit(1);
-    }
-  
-    // Save database object from the callback for reuse.
-    db = database;
-    console.log("Database connection ready");
-  
-    // Initialize the app.
-    app.listen(PORT, function () {
-        console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
-      });
+  app.listen(PORT, function () {
+    console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
   });
   
 }
+

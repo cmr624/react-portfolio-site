@@ -3,3 +3,4 @@ sketch
 .nyc_output
 .DS_Store
 .env
+.vscode
