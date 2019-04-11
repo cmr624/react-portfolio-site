@@ -1,0 +1,35 @@
+.Nintendo{
+    color: white;
+}
+.Nintendo h1
+{
+    text-transform: uppercase;
+}
+.Nintendo .heading
+{
+    font-family: Gill Sans;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.assignment-part h2
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.assignment-part .assignment-row
+{
+    padding: 10px 0px 10px 0px;
+}
+.assignment-col
+{
+    padding: 10px;
+}
+
+#mechanic
+{
+    text-align: center;
+}
