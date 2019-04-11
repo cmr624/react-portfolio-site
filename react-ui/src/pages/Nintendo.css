@@ -5,6 +5,10 @@
 {
     text-transform: uppercase;
 }
+.Nintendo #header-nintendo p
+{
+    padding-top: 10px;
+}
 .Nintendo .heading
 {
     font-family: Gill Sans;
@@ -14,6 +18,12 @@
 }
 
 .assignment-part h2
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.assignment-part h3#level
 {
     text-align: center;
     padding-top: 10px;
