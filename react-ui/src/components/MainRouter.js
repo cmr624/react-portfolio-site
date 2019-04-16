@@ -7,7 +7,7 @@ import Contact from '../pages/Contact';
 import IndividualProject from "../pages/IndividualProject";
 import Signup from './auth/Signup';
 import Login from "./auth/Login";
-
+import UserDashboard from '../pages/recipes/UserDashboard';
 class MainRouter extends Component {
 
   constructor(props)
@@ -16,11 +16,11 @@ class MainRouter extends Component {
     this.state={
       webdevroutes: [],
       gameroutes:[],
-      message:''
+      message:'',
+      loggedIn:this.props.loggedIn
     }
     this.toRoute = this.toRoute.bind(this);
   }
-
   componentDidMount() {
       fetch('/api/webdev').then(response => {
           if (!response.ok) {
@@ -71,6 +71,7 @@ class MainRouter extends Component {
         return (
             <main>
             <Switch>
+              <Route exact path="/dashboard" render={() => <UserDashboard updateUser = {this.props.updateUser} loggedIn = {this.props.loggedIn}/>}/>
               <Route exact path="/signup" component={Signup}/>
               <Route exact path="/login" render={() => <Login updateUser = {this.props.updateUser}/>}/>
               <Route exact path='/' component={Home}/>

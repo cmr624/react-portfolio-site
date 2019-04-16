@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha",
-    "start": "node server",
+    "start": "nodemon server",
     "installAll": "npm install && cd react-ui && npm install",
     "dev": "concurrently \"npm start\" \"cd react-ui && npm start\"",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"

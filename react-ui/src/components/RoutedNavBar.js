@@ -44,7 +44,11 @@ class RoutedNavBar extends Component {
             <NavLink style={{float: "right"}} to="/signup">Sign Up</NavLink>,
             <NavLink style={{float: "right"}} to="/login">Login</NavLink>
             ]}
-            {this.props.loggedIn && (<NavLink style={{float: "right"}} onClick={this.logout}>Logout</NavLink>)}
+            {this.props.loggedIn && (
+            <>
+              <NavLink style={{float: "right"}} onClick={this.logout}>Logout</NavLink>
+              <NavLink to = "/dashboard">Dashboard</NavLink>
+            </>)}
             </Navbar.Collapse>
         </Navbar>
     );

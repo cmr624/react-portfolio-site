@@ -50,8 +50,10 @@ class App extends Component {
     return (
       <div className="App">
         <RoutedNavBar loggedIn = {this.state.loggedIn} updateUser={this.updateUser}/>
-        <MainRouter updateUser={this.updateUser}/>
-        <Footer size={60} loggedIn= {this.state.loggedIn} logInMessage={this.state.username}/>
+        <MainRouter loggedIn = {this.state.loggedIn} updateUser={this.updateUser}/>
+        <Footer size={60} 
+        loggedIn= {this.state.loggedIn} 
+        logInMessage={this.state.username}/>
       </div>
     );
   }

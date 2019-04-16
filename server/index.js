@@ -34,13 +34,10 @@ if (!isDev && cluster.isMaster) {
 
   // MIDDLEWARE
   app.use(morgan('dev'))
-  app.use(
-    bodyParser.urlencoded({
-      extended: false
-    })
-  )
+  app.use(bodyParser.urlencoded({extended: false }))
   app.use(bodyParser.json())
   const randomString="cmr123";
+  
     //sessions
   app.use(
     session({

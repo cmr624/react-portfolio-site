@@ -71,14 +71,13 @@ class Games extends Component {
       <Container>
         <Row>
         {this.state.games.map(this.toGameBoy)}
-        <Container style={{textAlign: "center", margin: "auto"}}>
-        <PulseLoader
-          color={'#8EC8E7'}
-          loading = {this.state.loading}
-          size={30}
-          />
-        </Container>
-   
+          <Container style={{textAlign: "center", margin: "auto"}}>
+            <PulseLoader
+              color={'#8EC8E7'}
+              loading = {this.state.loading}
+              size={30}
+              />
+          </Container>
         </Row>
       </Container>
 

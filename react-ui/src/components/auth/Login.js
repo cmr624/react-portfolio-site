@@ -26,8 +26,7 @@ class Login extends Component {
         event.preventDefault()
         console.log('handleSubmit')
 
-        axios
-            .post('/user/login', {
+        axios.post('/user/login', {
                 username: this.state.username,
                 password: this.state.password
             })
@@ -42,7 +41,7 @@ class Login extends Component {
                     })
                     // update the state to redirect to home
                     this.setState({
-                        redirectTo: '/userdash'
+                        redirectTo: '/dashboard'
                     })
                 }
             }).catch(error => {
