@@ -72,7 +72,6 @@ class MainRouter extends Component {
             <main>
             <Switch>
               <Route exact path='/' component={Home}/>
-              <Route exact path='/nintendo' component={Nintendo}/>
               <Route exact path='/webdev' component={Webdev}/>
               <Route exact path='/games' component={Games}/>
               <Route exact path='/contact' component={Contact}/>
