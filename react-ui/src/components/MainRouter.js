@@ -5,7 +5,6 @@ import Webdev from '../pages/Webdev';
 import Games from '../pages/Games';
 import Contact from '../pages/Contact';
 import IndividualProject from "../pages/IndividualProject";
-import Nintendo from "../pages/Nintendo";
 
 //we need a function that creates additional routes from db
 
