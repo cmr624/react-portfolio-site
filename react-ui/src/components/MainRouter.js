@@ -5,7 +5,6 @@ import Webdev from '../pages/Webdev';
 import Games from '../pages/Games';
 import Contact from '../pages/Contact';
 import IndividualProject from "../pages/IndividualProject";
-import Nintendo from "../pages/Nintendo";
 
 //we need a function that creates additional routes from db
 
@@ -72,7 +71,6 @@ class MainRouter extends Component {
             <main>
             <Switch>
               <Route exact path='/' component={Home}/>
-              <Route exact path='/nintendo' component={Nintendo}/>
               <Route exact path='/webdev' component={Webdev}/>
               <Route exact path='/games' component={Games}/>
               <Route exact path='/contact' component={Contact}/>
