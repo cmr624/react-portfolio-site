@@ -9,6 +9,7 @@ class Recipe extends Component {
         super(props);
         //dummy data for testing purposes
         this.state={
+            servings:4,
             ingredientListData:[
                 { number: 4, ingredient:'apples',},
                 { number: 2, ingredient:'bananas',},
@@ -37,7 +38,7 @@ class Recipe extends Component {
         <React.Fragment>
             <Container style={{color: 'white'}}>
                 <RecipeMetaData metaData={this.state.recipeMetaData}/>
-                <IngredientList listData={this.state.ingredientListData}/>
+                <IngredientList servings={this.state.servings} listData={this.state.ingredientListData}/>
                 <RecipeSteps stepData={this.state.recipeStepData}/>
             </Container>
         </React.Fragment>

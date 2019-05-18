@@ -41,7 +41,16 @@ class RoutedNavBar extends Component {
                 <NavLink to="/recipes">Recipes</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
             </Nav>
-            {!this.props.loggedIn  && [
+            </Navbar.Collapse>
+        </Navbar>
+    );
+  }
+}
+
+export default RoutedNavBar;
+
+/*
+{!this.props.loggedIn  && [
             <NavLink style={{float: "right"}} to="/signup">Sign Up</NavLink>,
             <NavLink style={{float: "right"}} to="/login">Login</NavLink>
             ]}
@@ -50,10 +59,4 @@ class RoutedNavBar extends Component {
               <NavLink style={{float: "right"}} onClick={this.logout}>Logout</NavLink>
               <NavLink to = "/dashboard">Dashboard</NavLink>
             </>)}
-            </Navbar.Collapse>
-        </Navbar>
-    );
-  }
-}
-
-export default RoutedNavBar;
+*/

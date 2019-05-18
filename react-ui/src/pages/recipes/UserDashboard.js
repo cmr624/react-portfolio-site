@@ -10,7 +10,7 @@ class UserDashboard extends Component {
         super(props);
         this.state={
             redirectTo:'/',
-            favorites:[]
+            favorites:[],
             //newFavorite:{name:""}
         }
         //this.handleSubmit = this.handleSubmit.bind(this)

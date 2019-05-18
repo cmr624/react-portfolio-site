@@ -52,7 +52,6 @@ class Games extends Component {
       <span className="games-index">
       <Container className ="games-desc" style={{textAlign: "center", padding: "30px 30px 10px 30px"}}>
         <h1 style={{fontSize: "48px"}}>Game Design and Development</h1>
-        <h2>By Carlos-Michael</h2>
         <br></br>
         <Container style={{maxWidth: "580px", fontSize:"20px"}}><p>With my minor in Game Design and access to the NYU Game Center, I have been able to use my programming and design skills to make interesting and creative interactive experiences. My portfolio of games demonstrates my ability to build and design a variety of types of experiences in different programming languages and development environments, including Unity and C#, Javascript, web-based VR and more.</p></Container>
         <Container style={{display: "block", maxWidth: "80px", height: "100px"}}>
