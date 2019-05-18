@@ -10,7 +10,7 @@ class App extends Component {
       super()
       this.state = {
         loggedIn: false,
-        username: null
+        userData: null
       }
 
       this.getUser = this.getUser.bind(this)
@@ -35,13 +35,13 @@ class App extends Component {
 
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
+          userData: response.data.user,
         })
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
-          username: null
+          userData: null,
         })
       }
     })
@@ -50,10 +50,10 @@ class App extends Component {
     return (
       <div className="App">
         <RoutedNavBar loggedIn = {this.state.loggedIn} updateUser={this.updateUser}/>
-        <MainRouter loggedIn = {this.state.loggedIn} updateUser={this.updateUser}/>
+        <MainRouter loggedIn = {this.state.loggedIn} updateUser={this.updateUser} userData={this.state.userData}/>
         <Footer size={60} 
         loggedIn= {this.state.loggedIn} 
-        logInMessage={this.state.username}/>
+        userData={this.state.userData}/>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Container, Form, Button} from "react-bootstrap";
+import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 class Signup extends Component {
     constructor(props) {
@@ -21,11 +22,13 @@ class Signup extends Component {
             username: this.state.username,
             password: this.state.password
         }).then(response => {
-            console.log(response)
             if(response.data)
             {
-                console.log("successful signup");
-                this.setState({redirectTo: "/login"})
+                this.props.updateUser({
+                    loggedIn: true,
+                    userData: response.data
+                });
+                this.setState({redirectTo: "/dashboard"})
             }
             else
             {
@@ -47,6 +50,10 @@ class Signup extends Component {
 
     render()
     {
+        if (this.state.redirectTo)
+        {
+            return <Redirect to={{pathname: this.state.redirectTo}}/>
+        }
         return(
         <Container style={{maxWidth: "400px", color: "white"}}>
             <Form onSubmit={this.handleSubmit}>

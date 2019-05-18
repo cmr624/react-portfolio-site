@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../database/models/user');
+const User = require('../database/models/user').User;
 const passport = require('../passport');
+const Favorite = require('../database/models/user').Favorite;
 
 router.post('/', (req, res) => {
     console.log('user signup');
@@ -58,6 +59,29 @@ router.get('/', (req, res, next) => {
         res.json({ user: null })
     }
 })
+
+//the post request for saving new favorites
+router.post("/favorites", (req, res) => {
+    const newUser = new Favorite({
+        name: req.body.data.name
+    });
+    if (req.user)
+    {
+        req.user.favorites.push(newUser);
+        req.user.save();
+    }
+});
+
+//get all of the current user's favorites
+router.get("/favorites", (req, res) => {
+    if (req.user)
+    {
+        res.send({favorites: req.user.favorites});
+    } else
+    {
+        res.send({favorites: []});
+    }
+});
 
 router.post('/logout', (req, res) => {
     if (req.user) {

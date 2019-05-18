@@ -38,6 +38,7 @@ class RoutedNavBar extends Component {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/webdev">Web Development</NavLink>
                 <NavLink to="/games">Games</NavLink>
+                <NavLink to="/recipes">Recipes</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
             </Nav>
             {!this.props.loggedIn  && [

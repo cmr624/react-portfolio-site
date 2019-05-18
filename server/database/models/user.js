@@ -3,11 +3,16 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 mongoose.promise = Promise;
 
+const favoriteRecipe = new Schema({
+	name: {type: String}
+})
+
 // Define userSchema
 const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
-	password: { type: String, unique: false, required: false }
+	password: { type: String, unique: false, required: false },
+	favorites: [favoriteRecipe]
 
 });
 
@@ -34,5 +39,6 @@ userSchema.pre('save', function (next) {
 	}
 })
 
+const Favorite = mongoose.model("Favorite", favoriteRecipe);
 const User = mongoose.model('User', userSchema, 'users');
-module.exports = User;
+module.exports = {Favorite, User};
