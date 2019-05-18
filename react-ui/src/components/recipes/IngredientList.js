@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Form } from 'react-bootstrap';
 
 class IngredientList extends Component {
     constructor(props){
@@ -24,8 +24,13 @@ class IngredientList extends Component {
         //wtf, this works. don't like this at ALLLLLL
         this.forceUpdate();
     }
-    handleClick = () => {
-        this.setState({servings: this.state.servings + 4}, this.calculateNewIngredientNumbers);
+    handleNumericInput = (e) => {
+        const inputtedNum = parseInt(e.target.value);
+        console.log(e.target.value);
+        if (e.target.value !== "" && inputtedNum > 0)
+        {
+            this.setState({servings: inputtedNum}, this.calculateNewIngredientNumbers);
+        }
     }
 
     componentWillMount(){
@@ -36,7 +41,12 @@ class IngredientList extends Component {
     {
         return(
         <Container>
-            <Button onClick={this.handleClick}>{this.state.servings} servings</Button>
+            <Form.Control 
+            type="number" 
+            value={this.state.servings} 
+            onChange={this.handleNumericInput}
+            style={{maxWidth:'100px'}}
+                />
             <ul>
                 {this.state.listData.map((e) => {
                     return(

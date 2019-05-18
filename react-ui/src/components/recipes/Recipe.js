@@ -13,7 +13,7 @@ class Recipe extends Component {
             ingredientListData:[
                 { number: 4, ingredient:'apples',},
                 { number: 2, ingredient:'bananas',},
-                { number: 1, ingredient:'tim apple',},
+                { number: .33, ingredient:'tim apple',},
             ],
             recipeMetaData:{
                 title:"apple recipe",
