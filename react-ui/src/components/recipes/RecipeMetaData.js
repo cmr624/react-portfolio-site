@@ -9,6 +9,7 @@ class RecipeMetaData extends Component {
             title:'',
             author:'',
             time:'',
+            tags:[],
         }
     }
 
@@ -18,6 +19,7 @@ class RecipeMetaData extends Component {
             title:this.props.metaData.title,
             author:this.props.metaData.author,
             time:this.props.metaData.time,
+            tags:this.props.metaData.tags,
         })
     }
     render()
@@ -27,6 +29,10 @@ class RecipeMetaData extends Component {
             <h1>{this.state.title}</h1>
             <h2>{this.state.author}</h2>
             <h3>{this.state.time}</h3>
+            <h4>tags</h4>
+            <ul>
+                {this.state.tags.map((e) => {return <li>{e}</li>})}
+            </ul>
         </Container>
 
         );

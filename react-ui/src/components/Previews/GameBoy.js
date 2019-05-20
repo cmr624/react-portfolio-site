@@ -52,8 +52,8 @@ class GameBoy extends Component {
                    
                     <div id="SSbtns">
                         <ul>
-                           <a id="moreInfo" href={this.props.detailsLink}></a>
-                           <a id="start" href={this.props.playURL}></a>
+                           <a id="moreInfo" href={this.props.detailsLink}> </a>
+                           <a id="start" href={this.props.playURL}> </a>
                         </ul>
                     </div>
                     <div className="power">

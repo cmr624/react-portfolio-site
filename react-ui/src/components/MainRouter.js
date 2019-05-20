@@ -5,9 +5,9 @@ import Webdev from '../pages/Webdev';
 import Games from '../pages/Games';
 import Contact from '../pages/Contact';
 import IndividualProject from "../pages/IndividualProject";
-import Signup from './auth/Signup';
-import Login from "./auth/Login";
-import UserDashboard from '../pages/recipes/UserDashboard';
+//import Signup from './auth/Signup';
+//import Login from "./auth/Login";
+//import UserDashboard from '../pages/recipes/UserDashboard';
 import RecipePage from '../components/recipes/RecipePage';
 class MainRouter extends Component {
 
@@ -18,9 +18,8 @@ class MainRouter extends Component {
       webdevroutes: [],
       gameroutes:[],
       message:'',
-      loggedIn:this.props.loggedIn
+      loggedIn:this.props.loggedIn,
     }
-    this.toRoute = this.toRoute.bind(this);
   }
   componentDidMount() {
       fetch('/api/webdev').then(response => {
@@ -72,9 +71,6 @@ class MainRouter extends Component {
         return (
             <main>
             <Switch>
-              <Route exact path="/dashboard" render={() => <UserDashboard updateUser = {this.props.updateUser} userData={this.props.userData} loggedIn = {this.props.loggedIn}/>}/>
-              <Route exact path="/signup" render={() => <Signup updateUser = {this.props.updateUser}/>}/>
-              <Route exact path="/login" render={() => <Login updateUser = {this.props.updateUser}/>}/>
               <Route exact path='/' component={Home}/>
               <Route exact path='/webdev' component={Webdev}/>
               <Route exact path='/games' component={Games}/>
@@ -89,3 +85,8 @@ class MainRouter extends Component {
 };
 
 export default MainRouter;
+/*
+ <Route exact path="/dashboard" render={() => <UserDashboard updateUser = {this.props.updateUser} userData={this.props.userData} loggedIn = {this.props.loggedIn}/>}/>
+ <Route exact path="/signup" render={() => <Signup updateUser = {this.props.updateUser}/>}/>
+ <Route exact path="/login" render={() => <Login updateUser = {this.props.updateUser}/>}/>
+*/

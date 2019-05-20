@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Form } from 'react-bootstrap';
+import { Container, Button, Form, InputGroup } from 'react-bootstrap';
 
 class IngredientList extends Component {
     constructor(props){
@@ -17,8 +17,7 @@ class IngredientList extends Component {
     }
 
     calculateNewIngredientNumbers = () => {
-        console.log("CALCULATING");
-        this.state.listData.forEach((e) => {
+        this.state.listData.map((e) => {
             e.number = this.state.servings / e.ratio;
         });
         //wtf, this works. don't like this at ALLLLLL
@@ -26,8 +25,12 @@ class IngredientList extends Component {
     }
     handleNumericInput = (e) => {
         const inputtedNum = parseInt(e.target.value);
-        console.log(e.target.value);
-        if (e.target.value !== "" && inputtedNum > 0)
+        if (e.target.value === "")
+        {
+            this.setState({servings:e.target.value});
+            return;
+        }
+        else if (inputtedNum > 0)
         {
             this.setState({servings: inputtedNum}, this.calculateNewIngredientNumbers);
         }
@@ -41,18 +44,20 @@ class IngredientList extends Component {
     {
         return(
         <Container>
-            <Form.Control 
-            type="number" 
-            value={this.state.servings} 
-            onChange={this.handleNumericInput}
-            style={{maxWidth:'100px'}}
+            <Form>
+            <InputGroup>
+                <Form.Control 
+                type="number" 
+                value={this.state.servings} 
+                onChange={this.handleNumericInput}
+                style={{maxWidth:'100px'}}
                 />
+            </InputGroup>
+            </Form>
+            <h4>IngredientList</h4>
             <ul>
                 {this.state.listData.map((e) => {
-                    return(
-                    <>
-                    <li>{e.number} {e.ingredient}</li>
-                    </>);
+                    return (<li>{e.number} {e.ingredient}</li>);
                 })}
             </ul>
         </Container>

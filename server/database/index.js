@@ -1,6 +1,5 @@
 const isDev = process.env.NODE_ENV !== 'production';
 const isStaging = process.env.NODE_ENV == "staging";
-const noDB = true;
 function getUrl(isStaging)
 {
   if (!isStaging)
@@ -19,22 +18,17 @@ let url = getUrl(isStaging);
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise
-if (!noDB)
-{
-  mongoose.connect(url).then(
-    () => { 
-        /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
-        console.log('Connected to Mongo');
-        
+mongoose.connect(url).then(
+  () => { 
+      /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
+      console.log('Connected to Mongo');   
     },
     err => {
          /** handle initial connection error */ 
          console.log('error connecting to Mongo: ')
          console.log(err);
-         
-        }
-  );
-}
+      }
+);
 
 
 
