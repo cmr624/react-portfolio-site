@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormControl, Container, Button} from 'react-bootstrap';
+import {Form, FormControl, Container, Button, Row, Col} from 'react-bootstrap';
 import Recipe from './Recipe';
 export default class RecipeBuilder extends Component {
     constructor(props)
@@ -26,7 +26,7 @@ export default class RecipeBuilder extends Component {
 
     render() {
         return(
-        <Container style={{color:'white'}}>
+        <Container style={{color:'white', maxWidth:"500px"}}>
         <h1>RecipeBuilder</h1>
         <Form onSubmit={this.onSubmit}>
             <RecipeMetaDataBuilder/>
@@ -83,17 +83,24 @@ class IngredientListDataBuilder extends Component {
         super(props);
         this.state = {
             ingredientsToEdit:1,
+            limit: 10,
         }
     }
 
     onClickAddIngredient = (e) => {
         e.preventDefault();
-        this.setState({ingredientsToEdit: this.state.ingredientsToEdit + 1});
+        if (this.state.ingredientsToEdit < this.state.limit)
+        {
+            this.setState({ingredientsToEdit: this.state.ingredientsToEdit + 1});
+        }
     }
 
     onClickRemoveIngredient = (e) => {
         e.preventDefault();
-        this.setState({ingredientsToEdit: this.state.ingredientsToEdit - 1});
+        if (this.state.ingredientsToEdit - 1 > 0)
+        {
+            this.setState({ingredientsToEdit: this.state.ingredientsToEdit - 1});
+        }
     }
 
     render(){
@@ -101,11 +108,23 @@ class IngredientListDataBuilder extends Component {
         let ingredients = [];
         for (let i = 0; i < this.state.ingredientsToEdit; i++)
         {
-            ingredients.push(<Form.Control 
+            ingredients.push(
+                <Row>
+                    <Col size={6}>
+            <Form.Control 
                 type="text" 
                 placeholder="Ingredient" 
                 name={"ingredient" + i}
-                required />);
+                required />
+                </Col>
+                <Col size={6}>
+            <Form.Control 
+                type="number" 
+                placeholder="Number" 
+                name={"ingredientNum" + i}
+                required />
+            </Col>
+            </Row>);
         }
         return(<>
         <h4>IngredientListDataBuilder</h4>
