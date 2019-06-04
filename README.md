@@ -9,7 +9,7 @@ A recreation of my portfolio website (currently written in Node.JS and EJS for t
 Overall goal is to allow for ease of adding new content. At the end of development, adding a new page / route / project should be relatively trivial, just add a document into the database and the app should pull the rest.
 
 ## Hosting
-Currently, we're hosted on [Heroku](https://react-portfolio-site-cm.herokuapp.com/) but I own carlos-michael.com so I just have to change that to the heroku app once I'm ready for launch.
+Hosted on [Heroku](https://react-portfolio-site-cm.herokuapp.com/) but I own [carlos-michael](https://www.carlos-michael.com).com and it's pointed to our Heroku app! 
 
 # Requirements
 
@@ -28,7 +28,6 @@ Currently, we're hosted on [Heroku](https://react-portfolio-site-cm.herokuapp.co
   - [ ] Playable Build ?
 - [x] Contact Page
   - [x] LinkedIn, Twitter, YouTube, etc.
-
 
 ## Advanced Functionality
 
