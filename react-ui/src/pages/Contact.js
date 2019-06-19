@@ -47,7 +47,7 @@ class Contact extends Component {
               size={this.state.size}
               />
             </a>
-            <h4>Instagram</h4>
+            <h4>Games</h4>
             </Col>
             <Col md={2} style={{margin: "auto"}}>
             <a href="https://www.instagram.com/carlosmichael22/">
@@ -55,7 +55,7 @@ class Contact extends Component {
               size={this.state.size}
               />
             </a>
-            <h4>Games</h4>
+            <h4>Instagram</h4>
             </Col>
             <Col md={2} style={{margin: "auto"}}>
             <a href="mailto:cmr624@nyu.edu">
