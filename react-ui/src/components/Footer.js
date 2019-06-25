@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Container, Row} from "react-bootstrap";
-import {FaGithubSquare, FaLinkedin, FaTwitterSquare, FaRegEnvelope}from "react-icons/fa";
+import {FaGithubSquare, FaLinkedin, FaTwitterSquare, FaRegEnvelope, FaInstagram}from "react-icons/fa";
 import {MdGamepad} from "react-icons/md";
 import "./Footer.css";
 class Footer extends Component {
@@ -22,6 +22,11 @@ class Footer extends Component {
             </a>
             <a href="https://twitter.com/carlos_michael">
               <FaTwitterSquare
+              size={this.props.size}
+              />
+            </a>
+            <a href="https://www.instagram.com/carlosmichael22/">
+              <FaInstagram
               size={this.props.size}
               />
             </a>

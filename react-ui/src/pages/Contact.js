@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Contact.css';
 import { Image, Row, Col, Container} from 'react-bootstrap';
-import {FaGithubSquare, FaLinkedin, FaTwitterSquare, FaRegEnvelope}from "react-icons/fa";
+import {FaGithubSquare, FaLinkedin, FaTwitterSquare, FaRegEnvelope, FaInstagram}from "react-icons/fa";
 import {MdGamepad} from "react-icons/md";
 
 class Contact extends Component {
@@ -15,7 +15,7 @@ class Contact extends Component {
       <div className="Contact">
         <Container>
           <h1>Contact Information</h1>
-          <h2>Please reach out to me for any job opportunities, along with any questions about projects.</h2>
+          <h2>Please reach out to me with any job opportunities, along with any questions or comments about projects.</h2>
           <Row className="icons">
            <Col md={2} style={{margin: "auto"}}>
             <a href="https://github.com/cmr624">
@@ -23,7 +23,7 @@ class Contact extends Component {
                 size={this.state.size}
                 />
             </a>
-            <h4>Check out my GitHub!</h4>
+            <h4>GitHub</h4>
            </Col>
            <Col md={2} style={{margin: "auto"}}>
             <a href="https://www.linkedin.com/in/carlos-michael/">
@@ -31,7 +31,7 @@ class Contact extends Component {
               size={this.state.size}
               />
             </a>
-            <h4>Connect with me!</h4>
+            <h4>Connect with me on LinkedIn!</h4>
             </Col>
             <Col md={2} style={{margin: "auto"}}>
             <a href="https://twitter.com/carlos_michael">
@@ -39,7 +39,7 @@ class Contact extends Component {
               size={this.state.size}
               />
             </a>
-            <h4>Follow my Twitter!</h4>
+            <h4>Twitter</h4>
             </Col>
             <Col md={2} style={{margin: "auto"}}>
             <a href="https://cmr624.itch.io/">
@@ -47,7 +47,15 @@ class Contact extends Component {
               size={this.state.size}
               />
             </a>
-            <h4>Play my games!</h4>
+            <h4>Games</h4>
+            </Col>
+            <Col md={2} style={{margin: "auto"}}>
+            <a href="https://www.instagram.com/carlosmichael22/">
+              <FaInstagram
+              size={this.state.size}
+              />
+            </a>
+            <h4>Instagram</h4>
             </Col>
             <Col md={2} style={{margin: "auto"}}>
             <a href="mailto:cmr624@nyu.edu">
