@@ -43,12 +43,13 @@ class Footer extends Component {
           </div>
           </Row>
           <Row>
-          <Container style={{maxWidth:"500px"}}>
+          <Container style={{maxWidth:"500px", color: "white"}}>
           <p style={{color: "white", textAlign:"center"}}>
           <br></br>
           This website is powered with the M.E.R.N. stack - MongoDB, Express, React, and Node.js. Please check out the GitHub repository 
           <a href="https://github.com/cmr624/react-portfolio-site.git"> here!</a>
           </p>
+          <p>{this.props.loggedIn && "Logged in as: " + this.props.userData.username}</p>
           <p style={{color: "white", textAlign:"center"}}>Programmed and designed by Carlos-Michael Rodriguez 2019</p>
           </Container>
           </Row>

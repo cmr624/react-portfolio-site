@@ -24,8 +24,8 @@ class GameBoy extends Component {
                             ></GifPlayer>
                         </div>
                         <div id="logo">
-                            <span class="logoName"><i>{this.props.name}</i></span>
-                            <span class="logoModel">
+                            <span className="logoName"><i>{this.props.name}</i></span>
+                            <span className="logoModel">
                                 <b>
                                     <span id="c"> B</span><span id="o1">Y</span><span id="l">: </span><span id="o2">C</span><span id="r">M</span>
                                 </b>
@@ -52,8 +52,8 @@ class GameBoy extends Component {
                    
                     <div id="SSbtns">
                         <ul>
-                           <a id="moreInfo" href={this.props.detailsLink}></a>
-                           <a id="start" href={this.props.playURL}></a>
+                           <a id="moreInfo" href={this.props.detailsLink}> </a>
+                           <a id="start" href={this.props.playURL}> </a>
                         </ul>
                     </div>
                     <div className="power">
