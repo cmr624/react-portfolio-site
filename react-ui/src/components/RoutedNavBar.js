@@ -6,12 +6,7 @@ import axios from 'axios';
 
 class RoutedNavBar extends Component {
 
-  constructor(props){
-    super(props);
-    this.logout = this.logout.bind(this);
-  }
-
-  logout(event)
+  logout = (event) =>
   {
     event.preventDefault();
     console.log('logging out!!! SEE YA');
@@ -40,6 +35,15 @@ class RoutedNavBar extends Component {
                 <NavLink to="/games">Games</NavLink>
                 <NavLink to="/recipes">Recipes</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
+                {!this.props.loggedIn  && [
+                  <NavLink style={{float: "right"}} to="/signup">Sign Up</NavLink>,
+                  <NavLink style={{float: "right"}} to="/login">Login</NavLink>
+                  ]}
+                  {this.props.loggedIn && (
+                  <>
+                    <NavLink style={{float: "right"}} onClick={this.logout}>Logout</NavLink>
+                    <NavLink to = "/dashboard">Dashboard</NavLink>
+                  </>)}
             </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -5,9 +5,9 @@ import Webdev from '../pages/Webdev';
 import Games from '../pages/Games';
 import Contact from '../pages/Contact';
 import IndividualProject from "../pages/IndividualProject";
-//import Signup from './auth/Signup';
-//import Login from "./auth/Login";
-//import UserDashboard from '../pages/recipes/UserDashboard';
+import Signup from './auth/Signup';
+import Login from "./auth/Login";
+import UserDashboard from '../pages/recipes/UserDashboard';
 import RecipePage from '../components/recipes/RecipePage';
 class MainRouter extends Component {
 
@@ -76,6 +76,10 @@ class MainRouter extends Component {
               <Route exact path='/games' component={Games}/>
               <Route exact path='/contact' component={Contact}/>
               <Route exact path='/recipes' component={RecipePage}/>
+              <Route exact path='/contact' component={Contact}/>
+              <Route exact path="/dashboard" render={() => <UserDashboard updateUser = {this.props.updateUser} userData={this.props.userData} loggedIn = {this.props.loggedIn}/>}/>
+              <Route exact path="/signup" render={() => <Signup updateUser = {this.props.updateUser}/>}/>
+              <Route exact path="/login" render={() => <Login updateUser = {this.props.updateUser}/>}/>
               {this.state.webdevroutes.map(this.toRoute)}
               {this.state.gameroutes.map(this.toRoute)}
             </Switch>
