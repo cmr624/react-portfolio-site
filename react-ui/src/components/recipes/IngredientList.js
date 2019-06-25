@@ -37,7 +37,11 @@ class IngredientList extends Component {
     }
 
     componentWillMount(){
-        this.setState({listData: this.props.listData,servings:this.props.servings,}, this.setRatios);
+        this.setState(
+            {
+                listData: this.props.listData,
+                servings:this.props.servings,}
+            , this.setRatios);
     }
 
     render()
@@ -57,7 +61,7 @@ class IngredientList extends Component {
             <h4>IngredientList</h4>
             <ul>
                 {this.state.listData.map((e) => {
-                    return (<li>{e.number} {e.ingredient}</li>);
+                    return (<li>{e.number} - {e.ingredient}</li>);
                 })}
             </ul>
         </Container>

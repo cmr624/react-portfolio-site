@@ -20,7 +20,8 @@ export default class RecipeBuilder extends Component {
         //e.target//((e) => {console.log(e.value)});
         const data = new FormData(e.target);
         for (var value of data.values()) {
-            console.log(value); 
+            //console.log(value); 
+            //value is the data value of the form
          }
     }
 
@@ -64,7 +65,7 @@ class RecipeMetaDataBuilder extends Component {
             required />
         <Form.Control 
             type="text" 
-            placeholder="Time" 
+            placeholder="Estimated Cooking Time" 
             name='time'
             required />
         <Form.Control 
@@ -93,6 +94,10 @@ class IngredientListDataBuilder extends Component {
         {
             this.setState({ingredientsToEdit: this.state.ingredientsToEdit + 1});
         }
+        else
+        {
+            console.log("ERROR: INGREDIENTS ABOVE LIMIT");
+        }
     }
 
     onClickRemoveIngredient = (e) => {
@@ -111,19 +116,19 @@ class IngredientListDataBuilder extends Component {
             ingredients.push(
                 <Row>
                     <Col size={6}>
-            <Form.Control 
-                type="text" 
-                placeholder="Ingredient" 
-                name={"ingredient" + i}
-                required />
-                </Col>
-                <Col size={6}>
-            <Form.Control 
-                type="number" 
-                placeholder="Number" 
-                name={"ingredientNum" + i}
-                required />
-            </Col>
+                    <Form.Control 
+                        type="text" 
+                        placeholder="Ingredient" 
+                        name={"ingredient" + i}
+                        required />
+                        </Col>
+                    <Col size={6}>
+                    <Form.Control 
+                        type="number" 
+                        placeholder="Number" 
+                        name={"ingredientNum" + i}
+                        required />
+                    </Col>
             </Row>);
         }
         return(<>
