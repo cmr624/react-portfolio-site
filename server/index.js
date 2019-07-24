@@ -49,7 +49,7 @@ if (!isDev && cluster.isMaster) {
   });
 
   app.get('/api/games', function (req, res) {
-    db.collection("games").find({"name": 1}).toArray(function(err, docs) {
+    db.collection("games").find({}).toArray(function(err, docs) {
         if (err) {
           handleError(res, err.message, "Failed to get games database.");
         } else {
