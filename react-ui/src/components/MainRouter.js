@@ -9,8 +9,8 @@ import Signup from './auth/Signup';
 import Login from "./auth/Login";
 import UserDashboard from '../pages/recipes/UserDashboard';
 import RecipePage from '../components/recipes/RecipePage';
-class MainRouter extends Component {
 
+class MainRouter extends Component {
   constructor(props)
   {
     super(props);

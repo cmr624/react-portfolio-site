@@ -19,8 +19,8 @@ export default class RecipeBuilder extends Component {
         e.preventDefault();
         //e.target//((e) => {console.log(e.value)});
         const data = new FormData(e.target);
-        for (var value of data.values()) {
-            //console.log(value); 
+        let values = data.values()
+            console.log(value); 
             //value is the data value of the form
          }
     }
@@ -148,7 +148,57 @@ class IngredientListDataBuilder extends Component {
 }
 
 class RecipeStepDataBuilder extends Component {
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            currentSteps:1,
+            limit: 10,
+        }
+    }
+
+    onClickAddStep = (e) => {
+        e.preventDefault();
+        if (this.state.currentSteps < this.state.limit)
+        {
+            this.setState({currentSteps: this.state.currentSteps + 1});
+        }
+        else
+        {
+            console.log("ERROR: STEPS ABOVE LIMIT");
+        }
+    }
+
+    onClickRemoveStep = (e) => {
+        e.preventDefault();
+        if (this.state.currentSteps - 1 > 0)
+        {
+            this.setState({currentSteps: this.state.currentSteps - 1});
+        }
+    }
+
     render(){
-        return(<h4>RecipeStepDataBuilder</h4>);
+
+        let steps = [];
+        for (let i = 0; i < this.state.currentSteps; i++)
+        {
+            steps.push(
+                    <li>
+                        <Form.Control 
+                        type="text" 
+                        placeholder="Text" 
+                        name={"step" + i}
+                        required />
+                    </li>);
+        }
+        return(<>
+        <h5>Steps</h5>
+        <ol>
+        {steps}
+        </ol>
+
+        <Button onClick={this.onClickAddStep}>Add</Button>
+        <Button onClick={this.onClickRemoveStep}>Remove</Button>
+        </>);
     }
 }

@@ -25,7 +25,7 @@ class RoutedNavBar extends Component {
   }
   render() {
     return (
-      <Navbar collapseOnSelect expand="sm" className = "navContainer">
+      <Navbar collapseOnSelect expand="lg" className = "navContainer">
       <Navbar.Brand className="navBrand" to="/">CM</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" id="toggle"/>
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -35,15 +35,18 @@ class RoutedNavBar extends Component {
                 <NavLink to="/games">Games</NavLink>
                 <NavLink to="/recipes">Recipes</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
-                {!this.props.loggedIn  && [
-                  <NavLink style={{float: "right"}} to="/signup">Sign Up</NavLink>,
+                {!this.props.loggedIn  && 
+                <>
+                  <NavLink style={{float: "right"}} to="/signup">Sign Up</NavLink>
                   <NavLink style={{float: "right"}} to="/login">Login</NavLink>
-                  ]}
-                  {this.props.loggedIn && (
-                  <>
-                    <NavLink style={{float: "right"}} onClick={this.logout}>Logout</NavLink>
-                    <NavLink to = "/dashboard">Dashboard</NavLink>
-                  </>)}
+                </>
+                }
+                {this.props.loggedIn && (
+                <>
+                  <NavLink style={{float: "right"}} onClick={this.logout}>Logout</NavLink>
+                  <NavLink to = "/dashboard">Dashboard</NavLink>
+                </>
+                )}
             </Nav>
             </Navbar.Collapse>
         </Navbar>
